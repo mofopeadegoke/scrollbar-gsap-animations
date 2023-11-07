@@ -1,52 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
-body {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+
+* {
   margin: 0;
-  background: #15151e;
-  overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
-p {
-  color: #fff;
-  font-size: 1.2rem;
+:root {
+  --primary-blue: #082567;
+  --textColor-primary: #082567;
+  --secondary-pink: #ffb6c1;
 }
-
-.races {
-  width: fit-content;
+/* Carousel */
+.wrapper {
   display: flex;
-  flex-wrap: nowrap;
+  max-width: 1200px;
+  position: relative;
+
+  margin-bottom: 4rem;
 }
 
-.races img {
-  font-family: 'Staatliches', cursive;
-  width: 40rem;
-  flex-shrink: 0;
-  padding-right: 0.3em;
-  padding-left: 0.3em;
-  margin: 0;
+.testimonialsWrapper .wrapper {
+  max-width: 41rem;
 }
 
-.races h2:last-of-type {
-  background: #e1e1ff;
+.programsWrapper,
+.newsWrapper,
+.facilitiesWrapper {
+  width: 100%;
+  max-width: 90vw;
+  margin: auto;
 }
 
-.lightBG {
-  background: #313143;
+.programsWrapper .heading,
+.newsWrapper .heading {
+  max-width: 1200px;
+  padding-inline: 1rem;
+  margin-bottom: 1rem;
 }
 
-.space-20vh {
-  height: 20vh;
+.programsWrapper .heading,
+.newsWrapper .heading {
+  max-width: 1048px;
 }
 
-.space-30vh {
-  height: 30vh;
+.programsWrapper .heading h2,
+.newsWrapper .heading h2 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: -0.72px;
+  margin-bottom: 1rem;
 }
 
-.space-50vh {
-  height: 50vh;
+.programsWrapper .heading p,
+.newsWrapper .heading p {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  width: 20rem;
+  letter-spacing: -0.4px;
+  margin-bottom: 3rem;
 }
 
-.space-100vh {
-  height: 100vh;
+.wrapper i {
+  top: -10%;
+  height: 48px;
+  width: 48px;
+  color: var(--primary-blue);
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 48px;
+  background: #fff;
+  border: 1px solid var(--primary-blue);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.1s linear;
+  box-shadow: 0.1px 0.1px 20px 0.1px var(--primary-blue);
+  display: none !important;
+}
+
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+.wrapper i:hover {
+  background: var(--primary-blue);
+  color: #fff;
+}
+
+.wrapper i:first-child {
+  right: 85px;
+  display: none;
+  z-index: 1;
+}
+
+.wrapper i:last-child {
+  right: 30px;
+}
+
+.testimonialsWrapper .wrapper i {
+  top: 50%;
+}
+
+.testimonialsWrapper .wrapper i:first-child {
+  left: -100px;
+}
+
+.testimonialsWrapper .wrapper i:last-child {
+  right: -80px;
+}
+
+.programOverview .wrapper i {
+  top: 40%; 
+}
+
+.programOverview .wrapper i:first-child {
+  left: -100px;
+}
+
+.programOverview .wrapper i:last-child {
+  right: -90px;
+}
+
+.wrapper .carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.newsWrapper .wrapper .carousel,
+.programsWrapper .wrapper .carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: stretch;
+  align-content: flex-start;
+  height: 30rem;
+}
+
+.testimonialsWrapper .wrapper .carousel {
+  display: block;
+}
+
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+  pointer-events: none;
+}
+
+.carousel .card,
+.carousel .basicCard {
+  display: inline-block;
+  height: 34rem;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.newsWrapper .carousel .card,
+.programsWrapper .carousel .card {
+  min-width: 20.6rem;
+}
+
+.testimonialsWrapper .carousel .card {}
+
+.carousel .card img,
+.carousel .basicCard img {
+  border-radius: 10px 10px 0px 0px;
+}
+.carousel img {
+  width: 20rem;
+  aspect-ratio: auto;
+  align-self: center;
+}
+.carousel img {
+  width: 80%;
+  /* Initial size */
+  transition: transform 0.5s ease;
+  transform-origin: center center;
+}
+
+.carousel img.active {
+  transform: scale(1.2);
+  /* Scale up the active image */
+  transition: transform 0.5s ease;
 }
