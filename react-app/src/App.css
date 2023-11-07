@@ -20,7 +20,6 @@
   display: flex;
   max-width: 1200px;
   position: relative;
-
   margin-bottom: 4rem;
 }
 
@@ -86,7 +85,8 @@
   transform: translateY(-50%);
   transition: all 0.1s linear;
   box-shadow: 0.1px 0.1px 20px 0.1px var(--primary-blue);
-  display: none !important;
+  visibility: hidden;
+  
 }
 
 .wrapper i:active {
@@ -186,17 +186,12 @@
 .carousel img {
   width: 20rem;
   aspect-ratio: auto;
-  align-self: center;
+  align-self: baseline;
+  flex: 1;
 }
 .carousel img {
   width: 80%;
   /* Initial size */
   transition: transform 0.5s ease;
   transform-origin: center center;
-}
-
-.carousel img.active {
-  transform: scale(1.2);
-  /* Scale up the active image */
-  transition: transform 0.5s ease;
 }
