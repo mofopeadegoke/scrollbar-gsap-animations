@@ -1,70 +1,74 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import carOne from "./assets/car 3.jpg";
-import carTwo from "./assets/car 4.jpg";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import carThree from "./assets/car 3.jpg";
+import carFour from "./assets/car 4.jpg";
 import carFive from "./assets/car 5.jpg";
-import "./App.css"; // Import your CSS file
+import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const App = () => {
-  const sliderRef = useRef(null);
+function App() {
+  const racesRef = useRef(null);
 
   useEffect(() => {
-    const slider = sliderRef.current;
-    const images = slider.querySelectorAll("li");
+    const races = racesRef.current;
 
-    gsap.to(images, {
-      scale: 0.8, // Initial scale for all images
-      scrollTrigger: {
-        trigger: slider,
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
-        markers: true, // Remove in production
-        toggleActions: "play none none none",
-        pin: slider,
+    function getScrollAmount() {
+      const racesWidth = races.scrollWidth;
+      const windowWidth = window.innerWidth;
+      return -(racesWidth - windowWidth);
+    }
+
+    const tween = gsap.to(races, {
+      x: getScrollAmount,
+      duration: () => {
+        return Math.abs(getScrollAmount()) / 100; // Adjust the divisor for desired scroll speed
       },
+      ease: "none",
     });
 
-    gsap.to(images, {
-      xPercent: -100,
-      scrollTrigger: {
-        trigger: slider,
-        start: "top top",
-        end: () => `+=${100 * (images.length - 1)}`,
-        scrub: 1,
-        pin: slider,
-      },
+    ScrollTrigger.create({
+      trigger: ".racesWrapper",
+      start: "top 20%",
+      end: () => `+=${getScrollAmount() * -1}`,
+      pin: true,
+      animation: tween,
+      scrub: 1,
+      invalidateOnRefresh: true,
     });
   }, []);
 
   return (
-    <div className="slider-container">
-      <ul ref={sliderRef} className="image-slider">
-        <li>
-          <img src={carOne} alt="Image 1" />
-        </li>
-        <li>
-          <img src={carOne} alt="Image 2" />
-        </li>
-        <li>
-          <img src={carOne} alt="Image 2" />
-        </li>
-        <li>
-          <img src={carOne} alt="Image 1" />
-        </li>
-        <li>
-          <img src={carOne} alt="Image 2" />
-        </li>
-        <li>
-          <img src={carOne} alt="Image 2" />
-        </li>
-        {/* Add more image slides as needed */}
-      </ul>
+    <div>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+        quia ipsum ullam facere dignissimos quos quisquam. Pariatur excepturi
+        eveniet error sint similique. Cupiditate exercitationem quaerat harum
+        cumque fuga commodi ipsum nulla, tempora dignissimos error voluptates
+        nobis praesentium pariatur explicabo possimus?
+      </p>
+      <div className="racesWrapper">
+        <div className="races" ref={racesRef}>
+          <img src={carThree} alt="A ferarri" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carThree} alt="A ferarri" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+        </div>
+      </div>
+      <div className="space-50vh lightBG">
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          quia ipsum ullam facere dignissimos quos quisquam. Pariatur excepturi
+          eveniet error sint similique. Cupiditate exercitationem quaerat harum
+          cumque fuga commodi ipsum nulla, tempora dignissimos error voluptates
+          nobis praesentium pariatur explicabo possimus?
+        </p>
+      </div>
     </div>
   );
-};
+}
 
 export default App;

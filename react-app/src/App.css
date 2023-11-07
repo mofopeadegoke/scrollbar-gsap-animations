@@ -1,24 +1,52 @@
-.slider-container {
-  width: 100%;
-  overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+  margin: 0;
+  background: #15151e;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-.image-slider {
+p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.races {
+  width: fit-content;
   display: flex;
-  list-style: none;
-  padding: 0;
-  transition: transform 0.5s ease;
+  flex-wrap: nowrap;
 }
 
-.image-slider li {
-  flex: 0 0 100%;
-  /* Each image takes 100% of the container width */
-  padding: 10px;
-  transition: transform 0.5s ease;
+.races img {
+  font-family: 'Staatliches', cursive;
+  width: 40rem;
+  flex-shrink: 0;
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+  margin: 0;
 }
 
-.image-slider img {
-  width: 80%;
-  /* Initial size */
-  transition: transform 0.5s ease;
-} 
+.races h2:last-of-type {
+  background: #e1e1ff;
+}
+
+.lightBG {
+  background: #313143;
+}
+
+.space-20vh {
+  height: 20vh;
+}
+
+.space-30vh {
+  height: 30vh;
+}
+
+.space-50vh {
+  height: 50vh;
+}
+
+.space-100vh {
+  height: 100vh;
+}
