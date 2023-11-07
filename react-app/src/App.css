@@ -1,0 +1,24 @@
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-slider {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  transition: transform 0.5s ease;
+}
+
+.image-slider li {
+  flex: 0 0 100%;
+  /* Each image takes 100% of the container width */
+  padding: 10px;
+  transition: transform 0.5s ease;
+}
+
+.image-slider img {
+  width: 80%;
+  /* Initial size */
+  transition: transform 0.5s ease;
+} 
