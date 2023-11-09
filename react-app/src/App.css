@@ -17,7 +17,7 @@
 }
 /* Carousel */
 .wrapper {
-  display: flex;
+  /* display: flex; */
   max-width: 1200px;
   position: relative;
   margin-bottom: 2rem;
@@ -25,7 +25,7 @@
 }
 
 .testimonialsWrapper .wrapper {
-  max-width: 41rem;
+  /* max-width: 41rem; */
 }
 
 .programsWrapper,
@@ -141,11 +141,9 @@
 
 .newsWrapper .wrapper .carousel,
 .programsWrapper .wrapper .carousel {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-self: stretch;
-  align-content: flex-start;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
   height: 30rem;
 }
 
@@ -185,14 +183,10 @@
   border-radius: 10px 10px 0px 0px;
 }
 .carousel img {
-  width: 20rem;
+  align-self: center;
+  transform: scale(0.95);
   aspect-ratio: auto;
-  align-self: baseline;
-  flex: 1;
-}
-.carousel img {
-  width: 80%;
-  /* Initial size */
-  transition: transform 0.5s ease;
-  transform-origin: center center;
+  margin-inline: 0;
+  transition: transform 0.3s linear;
+  transform-origin: bottom center;
 }

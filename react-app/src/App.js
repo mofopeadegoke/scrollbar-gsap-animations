@@ -129,6 +129,12 @@ const App = () => {
         slider.scrollLeft = startScrollLeft - distance;
         scaleImages(images, index);
       });
+      image.addEventListener("click", (e) => {
+        scaleImages(images, index);
+      });
+      image.addEventListener("dblclick", (e) => {
+        reduceImages(images, index);
+      });
 
       image.addEventListener("mouseup", () => {
         isDragging = false;
@@ -145,7 +151,16 @@ const App = () => {
       const isActive = index === activeIndex;
 
       gsap.to(image, {
-        scaleY: isActive ? 1.5 : 0.8, // Scale up the active image
+        scale: isActive ? "1.2" : "0.8", // Scale up the active image
+      });
+    });
+  };
+  const reduceImages = (images, activeIndex) => {
+    images.forEach((image, index) => {
+      const isActive = index === activeIndex;
+
+      gsap.to(image, {
+        scale: "0.95", // Scale up the active image
       });
     });
   };
@@ -155,15 +170,16 @@ const App = () => {
       <article className="wrapper">
         <i id="left" className="fa-solid fa-angle-left toBeHidden"></i>
         <div className="carousel" ref={sliderRef}>
-          <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
-          <img src={carFive} alt="A fast car" />
-          <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
-          <img src={carFive} alt="A fast car" />
-          <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
-          <img src={carFive} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
+          <img src={carFour} alt="A fast car" />
         </div>
         <i id="right" className="fa-solid fa-angle-right toBeHidden"></i>
       </article>
