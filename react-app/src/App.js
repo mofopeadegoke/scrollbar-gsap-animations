@@ -176,10 +176,6 @@ const App = () => {
           <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
           <img src={carThree} alt="A fast car" />
-          <img src={carFour} alt="A fast car" />
-          <img src={carThree} alt="A fast car" />
-          <img src={carFour} alt="A fast car" />
-          <img src={carThree} alt="A fast car" />
         </div>
         <i id="right" className="fa-solid fa-angle-right"></i>
       </article>
