@@ -127,7 +127,7 @@ const App = () => {
 
         const distance = e.clientX - startX;
         slider.scrollLeft = startScrollLeft - distance;
-        scaleImages(images, index);
+        // scaleImages(images, index);
       });
       image.addEventListener("click", (e) => {
         scaleImages(images, index);
@@ -168,20 +168,20 @@ const App = () => {
   return (
     <article className="programsWrapper" id="programs">
       <article className="wrapper">
-        <i id="left" className="fa-solid fa-angle-left toBeHidden"></i>
+        <i id="left" className="fa-solid fa-angle-left"></i>
         <div className="carousel" ref={sliderRef}>
           <img src={carFour} alt="A fast car" />
+          <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
+          <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
+          <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
+          <img src={carThree} alt="A fast car" />
           <img src={carFour} alt="A fast car" />
-          <img src={carFour} alt="A fast car" />
-          <img src={carFour} alt="A fast car" />
-          <img src={carFour} alt="A fast car" />
-          <img src={carFour} alt="A fast car" />
-          <img src={carFour} alt="A fast car" />
+          <img src={carThree} alt="A fast car" />
         </div>
-        <i id="right" className="fa-solid fa-angle-right toBeHidden"></i>
+        <i id="right" className="fa-solid fa-angle-right"></i>
       </article>
     </article>
   );

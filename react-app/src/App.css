@@ -184,6 +184,8 @@
 }
 .carousel img {
   align-self: center;
+  width: 300px;
+  height: 168px;
   transform: scale(0.95);
   aspect-ratio: auto;
   margin-inline: 0;
